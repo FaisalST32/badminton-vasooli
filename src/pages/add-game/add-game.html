@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Add New Game</ion-title>
+    <ion-buttons end>
+
+      <button ion-button clear item-right (click)="onSubmitForm()" [disabled]="!gameForm.valid">Done</button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="gameForm">
+
+    <ion-item color="lightdark">
+      <ion-label>
+        Date
+      </ion-label>
+      <ion-input formControlName="date" type="text">
+
+      </ion-input>
+    </ion-item>
+    <ion-item color="lightdark">
+        <ion-label>
+            Total Courts
+          </ion-label>
+          <ion-input formControlName="courtsNumber" type="text">
+
+          </ion-input>
+    </ion-item>
+    <ion-item color="lightdark">
+      <ion-label>
+        Amount Paid
+      </ion-label>
+      <ion-input formControlName="totalAmount" placeholder="Amount(₹)" type="text">
+
+      </ion-input>
+    </ion-item>
+    <ng-container *ngIf="gameForm.get('payments').controls.length > 0">
+      <ion-list formArrayName="payments">
+
+        <ion-list-header color="dark">
+          Selected Players
+        </ion-list-header>
+        <ion-item color="lightdark" *ngFor="let payment of gameForm.get('payments').controls; let i = index;" [formGroupName]="i">
+            <ion-label>
+              {{payment.value.name}}
+            </ion-label>
+            <ion-input type="text" placeholder="Amount(₹)" formControlName="amount">
+            </ion-input>
+            <div class="icon-container" tappable clear icon-only item-right (click)="$event.stopPropagation;onRemovePlayer(payment.value.id, i)">
+              <ion-icon name="close"></ion-icon>
+            </div>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </form>
+  <ng-container *ngIf="players.length > 0">
+  <ion-list>
+    <ion-list-header color="dark">
+      Select Players
+    </ion-list-header>
+
+
+      <ion-item color="lightdark" *ngFor="let player of players">
+        {{player.name}}
+
+        <div class="icon-container" tappable clear icon-only item-right (click)="onAddPlayer(player)">
+          <ion-icon name="add"></ion-icon>
+        </div>
+      </ion-item>
+
+  </ion-list>
+</ng-container>
+  <button ion-button color="light" block (click)="onNewPlayer()">
+    <ion-icon name="add"></ion-icon>&nbsp; Add New Player
+  </button>
+</ion-content>

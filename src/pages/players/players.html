@@ -1,0 +1,16 @@
+
+
+<ion-header>
+    <ion-navbar color="dark">
+      <ion-title>Total: ₹{{ totalOutstanding | number:'1.0-1' }}</ion-title>
+      <!-- <ion-buttons end>
+        <button ion-button clear item-right (click)="onSubmitForm()" [disabled]="!gameForm.valid">Done</button>
+      </ion-buttons> -->
+    </ion-navbar></ion-header>
+<ion-content >
+    <ion-list class="payment-list">
+      <ion-item button color="lightdark" (click)="onClickPlayer(player.id)" *ngFor='let player of playerPayments'>
+        <span class="player-name">{{player.name}}</span><div  class="payment-status-text" item-right>₹{{player.pendingAmount | number:'1.0-1'}}</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>

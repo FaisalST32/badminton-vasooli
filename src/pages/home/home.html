@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="dark">
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>
+      Badminton Vasooli
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ng-container *ngIf="games">
+
+    <ion-card color="dark" *ngFor="let game of games" (click)="goToGame(game)">
+      <ion-card-header>
+        {{game?.date}}
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          Total Participants: {{game?.payments.length}}
+        </p>
+        <p>
+          No. of Courts: {{game?.totalCourts}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+  <p class="large-centered-text" *ngIf="!games">
+    {{emptyText}}
+  </p>
+</ion-content>

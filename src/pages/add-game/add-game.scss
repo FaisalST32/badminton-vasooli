@@ -1,0 +1,24 @@
+page-add-game {
+  .list-header-md{
+    margin-bottom: 0;
+  }
+  .icon-container{
+    vertical-align: middle;
+    text-align: center;
+    line-height: 40px;
+    z-index: 100;
+    font-size: 12px;
+    width: 40px;
+    height: 40px;
+    transition: color,background-color 200ms ease-in-out;
+    ion-icon{
+      margin: 0;
+      padding: 0;
+      vertical-align: middle;
+    }
+    &:active{
+      background-color: dimgray;
+      color: white;
+    }
+  }
+}

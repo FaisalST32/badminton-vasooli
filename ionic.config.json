@@ -1,0 +1,7 @@
+{
+  "name": "BadmintonVasooli",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

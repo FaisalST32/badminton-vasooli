@@ -1,0 +1,63 @@
+page-game {
+  .page-heading{
+    color: white;
+    text-align: center;
+    font-weight: 200;
+    font-size: 4em;
+    margin: 56px 0 30px 0;
+  }
+
+  .Not-Sent{
+
+    div.item-inner{
+      border-left: 20px yellow solid;
+
+    }
+  }
+  .Sent{
+
+    div.item-inner{
+      border-left: 20px red solid;
+
+    }
+    ion-icon{
+      color: black;
+    }
+  }
+  .Paid{
+
+    div.item-inner{
+      border-left: 20px rgb(62, 241, 62) solid;
+
+    }
+  }
+
+  .payment-status-text{
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  // .payment-list{
+  //   background-color: white;
+  // }
+
+  .payment-item{
+    div.item-inner{
+
+      margin-bottom: 10px;
+      color: white;
+      background-color: #222;
+      padding: 0 0px 0 20px;
+      font-size: 1.3em;
+      ion-icon{
+        color: white;
+      }
+      button{
+        height: 66px;
+      }
+    }
+  }
+
+
+
+}

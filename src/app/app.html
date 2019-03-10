@@ -1,0 +1,14 @@
+<ion-menu color="dark" [content]="nav">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-toolbar>
+  <ion-list>
+    <button ion-item (click)="goToHome()" menuClose>Home</button>
+    <button ion-item (click)="goToPlayers()" menuClose>Players</button>
+    <button ion-item (click)="goToAddGame()" menuClose>Add New Game</button>
+  </ion-list>
+</ion-menu>
+<ion-nav #nav [root]="rootPage"></ion-nav>
+
